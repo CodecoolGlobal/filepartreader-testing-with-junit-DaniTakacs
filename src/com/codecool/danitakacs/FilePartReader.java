@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class FilePartReader {
 
+
     private String filePath;
     private Integer fromLine;
     private Integer toLine;
 
-    FilePartReader() {
+    public FilePartReader() {
         filePath = "";
         fromLine = 0;
         toLine = -1;
@@ -38,12 +39,12 @@ public class FilePartReader {
 
     }
 
-    public String readLines () throws IOException {
+    public String readLines() throws IOException {
         String fileContent = read();
         String[] lines = fileContent.split("\n");
         StringBuilder returnContent = new StringBuilder();
-        for (int i = 0; i < lines.length; i++){
-            if (i+1 >= fromLine && i+1 <= toLine){
+        for (int i = 0; i < lines.length; i++) {
+            if (i + 1 >= fromLine && i + 1 <= toLine) {
                 returnContent.append(lines[i]);
                 returnContent.append(" ");
             }
